@@ -14,12 +14,12 @@ feature 'Set up a game of battleships' do
 
   scenario 'ensure ship does not go off edge of grid vertically' do
     destroyer = Ship.new 2
-    expect { board.place_ship destroyer, 'A1', 'v'}.to raise_error 'boat is off the grid!'
+    expect { board.place_ship destroyer, 'J10', 'v'}.to raise_error 'boat is off the grid!'
   end
 
   scenario 'ensure ship does not go off grid horizontally' do
     destroyer = Ship.new 2
-    expect { board.place_ship destroyer, 'A1', 'h'}.to raise_error 'boat is off the grid!'
+    expect { board.place_ship destroyer, 'J10', 'h'}.to raise_error 'boat is off the grid!'
   end
 
   scenario 'ensure ships do not overlap' do
