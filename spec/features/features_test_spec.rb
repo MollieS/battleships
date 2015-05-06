@@ -12,4 +12,5 @@ feature 'Play a game of battleships' do
     expect(board.grid).to include ship
   end
 
+
 end
