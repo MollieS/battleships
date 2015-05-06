@@ -2,7 +2,7 @@ require 'capybara/rspec'
 require 'board'
 require 'ship'
 
-feature 'Play a game of battleships' do
+feature 'Set up a game of battleships' do
 
   let(:board) { Board.new }
   let(:ship) { Ship.new }
@@ -17,9 +17,17 @@ feature 'Play a game of battleships' do
     destroyer = Ship.new 2
     expect { board.place_ship destroyer, 'A1', 'v'}.to raise_error 'boat is off the grid!'
   end
+
   scenario 'ensure ship does not go off grid horizontally' do
     destroyer = Ship.new 2
     expect { board.place_ship destroyer, 'A1', 'h'}.to raise_error 'boat is off the grid!'
+  end
+
+  scenario 'ensure ships do not overlap' do
+    dinghy1 = Ship.new 1
+    board.place_ship dinghy1, 'A1', 'v'
+    dinghy2 = Ship.new 1
+    expect { board.place_ship dinghy2, 'A1', 'h' }.to raise_error 'boats have overlapped!'
   end
 
 end

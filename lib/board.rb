@@ -16,6 +16,8 @@ class Board
     x_axis coords
     if orientation == 'v'
       fail 'boat is off the grid!' if (x_axis(coords) - 1) + ship.length > grid.length
+    elsif orientation == 'h'
+      fail 'boat is off the grid!' if (y_axis_to_num(coords) - 1) + ship.length > grid.length
     end
   end
 
