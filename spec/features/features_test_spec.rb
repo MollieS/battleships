@@ -29,4 +29,16 @@ feature 'Set up a game of battleships' do
     expect { board.place_ship dinghy2, 'A1', 'h' }.to raise_error 'boats have overlapped!'
   end
 
+  scenario 'ensure ship occupies all appropriate grid squares (vertically)' do
+    dinghy = Ship.new 2
+    board.place_ship dinghy, 'A1', 'v'
+    expect(board.grid_read 'A2').to be dinghy
+  end
+
+  scenario 'ensure ship occupies all appropriate grid squares (horizontally)' do
+    dinghy = Ship.new 2
+    board.place_ship dinghy, 'A1', 'h'
+    expect(board.grid_read 'B1').to be dinghy
+  end
+
 end
