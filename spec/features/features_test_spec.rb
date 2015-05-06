@@ -9,7 +9,7 @@ feature 'Set up a game of battleships' do
 
   scenario 'put a ship on the board with a given orientation' do
     board.place_ship ship, 'A1', 'v'
-    expect(board.grid).to include ship
+    expect(board.grid_read 'A1').to be ship
   end
 
   scenario 'ensure ship does not go off edge of grid vertically' do
