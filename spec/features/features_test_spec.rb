@@ -50,10 +50,7 @@ feature 'Playing a game of battleships' do
   scenario 'ships can be fired at' do
     board.place_ship ship, 'B7', 'h'
     board.fire 'B7'
-    expect(board.grid 'B7').to eq '*'
-    expect(ship).to be_hit
+    expect(board.grid_read 'B7').to eq '*'
   end
-
-
 
 end

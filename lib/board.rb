@@ -68,4 +68,8 @@ class Board
     end
   end
 
+  def fire coords
+    @grid[x_axis(coords)][y_axis(coords)] = '*'
+  end
+
 end
