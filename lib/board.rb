@@ -8,7 +8,6 @@ class Board
 
   def place_ship ship, coords, orientation
     ship_fit ship, coords, orientation
-    ship.orientation = orientation
     @grid << ship
   end
 
