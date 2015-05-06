@@ -23,4 +23,10 @@ class Board
     coords.split(//)[1].to_i
   end
 
+  def y_axis_to_num coords
+    alphabet = ('A'..'J').to_a
+    val = coords.split(//)[0]
+    (alphabet.index(val)) + 1
+  end
+
 end
