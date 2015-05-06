@@ -12,9 +12,8 @@ describe Ship do
     expect(destroyer.length != aircraft_carrier.length).to eq true
   end
 
-  # it 'can be placed vertically or horizontally' do
-  #   orientation_states = ['h', 'v']
-  #   expect(orientation_states).to include subject.orientation
+  # it 'can communicate its hit status' do
+  #   ship.hit?
   # end
 
 end

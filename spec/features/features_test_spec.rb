@@ -40,5 +40,20 @@ feature 'Set up a game of battleships' do
     board.place_ship dinghy, 'A1', 'h'
     expect(board.grid_read 'B1').to be dinghy
   end
+end
+
+feature 'Playing a game of battleships' do
+
+  let(:board) { Board.new }
+  let(:ship) { Ship.new }
+
+  scenario 'ships can be fired at' do
+    board.place_ship ship, 'B7', 'h'
+    board.fire 'B7'
+    expect(board.grid 'B7').to eq '*'
+    expect(ship).to be_hit
+  end
+
+
 
 end
