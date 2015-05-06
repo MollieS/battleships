@@ -6,7 +6,8 @@ class Board
     @grid = []
   end
 
-  def place_ship ship
+  def place_ship ship, orientation
+    ship.orientation = orientation
     @grid << ship
   end
 
