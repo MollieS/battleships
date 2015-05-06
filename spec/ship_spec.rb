@@ -7,9 +7,14 @@ describe Ship do
   end
 
   it 'exist in selection of other ships with different lengths' do
-    destroyer = subject 6
-    aircraft_carrier = subject 4
+    destroyer = Ship.new(6)
+    aircraft_carrier = Ship.new(4)
     expect(destroyer.length != aircraft_carrier.length).to eq true
+  end
+
+  it 'can be oriented vertically or horizontally' do
+    orientation_states = ['h', 'v']
+    expect(orientation_states).to include subject.orientation
   end
 
 end
